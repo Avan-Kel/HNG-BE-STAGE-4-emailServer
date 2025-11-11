@@ -1,0 +1,5 @@
+fastapi
+uvicorn[standard]
+aio-pika
+aiosmtplib
+python-dotenv
