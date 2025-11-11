@@ -1,6 +1,8 @@
 fastapi
 uvicorn[standard]
 aio-pika
-aiosmtplib
-python-dotenv
 pika
+httpx
+aiosmtplib[secure]
+python-dotenv
+pydantic
