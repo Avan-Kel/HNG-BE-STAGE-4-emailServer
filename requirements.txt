@@ -3,3 +3,4 @@ uvicorn[standard]
 aio-pika
 aiosmtplib
 python-dotenv
+pika
