@@ -1,8 +1,9 @@
 fastapi
-uvicorn[standard]
-aio-pika
-pika
-httpx
-aiosmtplib[secure]
-python-dotenv
+uvicorn
 pydantic
+email-validator
+python-dotenv
+httpx
+aiosmtplib
+pika
+aio-pika
