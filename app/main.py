@@ -23,7 +23,7 @@ logging.basicConfig(
 app = FastAPI(title="Email Service")
 
 RABBITMQ_URL = os.getenv("RABBITMQ_URL")
-QUEUE_NAME = os.getenv("RABBITMQ_QUEUE", "email.notifications.queue")
+QUEUE_NAME = os.getenv("RABBITMQ_QUEUE", "email.queue")
 
 
 @app.on_event("startup")
@@ -111,7 +111,7 @@ def enqueue_test_email(payload: TestEmailRequest):
         raise HTTPException(status_code=500, detail=str(e))
 
 
-# ✅ ✅ ✅ NEW LOGS API ENDPOINT
+# LOGS API ENDPOINT
 @app.get("/api/v1/logs")
 def get_logs(limit: int = 100):
     try:

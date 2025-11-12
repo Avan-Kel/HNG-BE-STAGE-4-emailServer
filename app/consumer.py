@@ -91,11 +91,17 @@ async def on_message(message: IncomingMessage):
 
         logging.info(f"📩 Received queue message: {data}")
 
+        # ✅ FIX for missing email key
+        recipient_email = data.get("email") or data.get("user_contact", {}).get("email")
+        if not recipient_email:
+            logging.error("❌ No email found in message. Skipping.")
+            return
+
         template_body = await fetch_template(data["template_code"])
         email_body = render_template(template_body, data.get("variables", {}))
         subject = data.get("subject", "Notification")
 
-        await send_email(data["email"], subject, email_body)
+        await send_email(recipient_email, subject, email_body)
 
 
 async def start_consumer_in_background():
@@ -106,6 +112,9 @@ async def start_consumer_in_background():
 
         await queue.consume(on_message)
         logging.info(f"📨 Consumer listening on queue: {QUEUE_NAME}")
+
+        # ✅ PREVENT AUTO-CLOSE
+        start_consumer_in_background.connection = connection
 
         await asyncio.Future()
 

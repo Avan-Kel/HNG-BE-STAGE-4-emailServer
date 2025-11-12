@@ -32,3 +32,102 @@ task: <Task pending name='Task-3' coro=<start_consumer_in_background() done, def
 2025-11-12 09:56:09,555 - [INFO] - \u2705 Template fetched: CONFIRM_EMAIL_001
 2025-11-12 09:56:12,690 - [INFO] - \u2705 Email sent to promisewonder03@gmail.com
 2025-11-12 10:10:23,735 - [INFO] - Connection to amqps://kwlnuylq:******@crow.rmq.cloudamqp.com/kwlnuylq closed. Reconnecting after 5 seconds.
+2025-11-12 13:42:45,438 - [INFO] - \u2705 Consumer started
+2025-11-12 13:42:47,784 - [ERROR] - error when creating transport: <AMQPConnectionError: (11002, 'getaddrinfo failed')>
+2025-11-12 13:42:47,785 - [INFO] - Connection to amqps://kwlnuylq:******@crow.rmq.cloudamqp.com/kwlnuylq closed. Reconnecting after 5 seconds.
+2025-11-12 13:42:47,785 - [ERROR] - \u274c RabbitMQ connection failed: [Errno 11002] getaddrinfo failed
+2025-11-12 14:07:14,888 - [INFO] - \u2705 Consumer started
+2025-11-12 14:07:15,181 - [ERROR] - error when creating transport: <AMQPConnectionError: (11002, 'getaddrinfo failed')>
+2025-11-12 14:07:15,181 - [INFO] - Connection to amqps://kwlnuylq:******@crow.rmq.cloudamqp.com/kwlnuylq closed. Reconnecting after 5 seconds.
+2025-11-12 14:07:15,182 - [ERROR] - \u274c RabbitMQ connection failed: [Errno 11002] getaddrinfo failed
+2025-11-12 14:07:43,123 - [INFO] - \u2705 Consumer started
+2025-11-12 14:07:43,198 - [ERROR] - error when creating transport: <AMQPConnectionError: (11002, 'getaddrinfo failed')>
+2025-11-12 14:07:43,198 - [INFO] - Connection to amqps://kwlnuylq:******@crow.rmq.cloudamqp.com/kwlnuylq closed. Reconnecting after 5 seconds.
+2025-11-12 14:07:43,199 - [ERROR] - \u274c RabbitMQ connection failed: [Errno 11002] getaddrinfo failed
+2025-11-12 14:09:03,324 - [INFO] - \u2705 Consumer started
+2025-11-12 14:09:07,101 - [INFO] - \U0001f4e8 Consumer listening on queue: email.queue
+2025-11-12 14:09:50,211 - [INFO] - \U0001f4e9 Received queue message: {'notification_id': '9b46294f-3cf0-4875-b1d2-40ef2dc94784', 'correlation_id': '364e2b35-f7f8-44c9-aee0-631361c9ba80', 'template_body': 'Hello {{name}}, welcome to our platform!', 'template_subject': 'Welcome Email', 'template_code': 'TEMPLATE_001', 'recipient': 'gudymediapro@gmail.com', 'user_contact': {'email': 'testing@gmail.com', 'push_token': None}, 'user_id': '938b9124-25e6-46a7-89d4-14fbfddf2e0c', 'request_id': 'req-550e8400-e29b-41d4-a716-446655440000', 'priority': 1, 'notification_type': 'email', 'variables': {'name': 'John Doe', 'link': 'https://example.com/welcome', 'meta': {'key': 'value'}}, 'metadata': {'campaign_id': 'summer_2025'}}
+2025-11-12 14:09:50,253 - [ERROR] - Task was destroyed but it is pending!
+task: <Task pending name='Task-3' coro=<start_consumer_in_background() done, defined at C:\Users\HP\Documents\Production Projects\HNG-BE-4\email-service\app\consumer.py:101> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2025-11-12 14:09:52,968 - [INFO] - HTTP Request: GET https://hng-be-stage-4-production.up.railway.app/api/v1/templates/TEMPLATE_001 "HTTP/1.1 200 OK"
+2025-11-12 14:09:52,970 - [INFO] - \u2705 Template fetched: TEMPLATE_001
+2025-11-12 14:09:52,971 - [ERROR] - Exception in callback _task_done() at C:\Users\HP\AppData\Local\Programs\Python\Python313\Lib\site-packages\aio_pika\tools.py:40
+handle: <Handle _task_done() at C:\Users\HP\AppData\Local\Programs\Python\Python313\Lib\site-packages\aio_pika\tools.py:40>
+Traceback (most recent call last):
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python313\Lib\asyncio\events.py", line 89, in _run
+    self._context.run(self._callback, *self._args)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python313\Lib\site-packages\aio_pika\tools.py", line 44, in _task_done
+    raise exc
+  File "C:\Users\HP\Documents\Production Projects\HNG-BE-4\email-service\app\consumer.py", line 98, in on_message
+    await send_email(data["email"], subject, email_body)
+                     ~~~~^^^^^^^^^
+KeyError: 'email'
+2025-11-12 14:09:53,106 - [ERROR] - Task exception was never retrieved
+future: <Task finished name='Task-15' coro=<consumer() done, defined at C:\Users\HP\AppData\Local\Programs\Python\Python313\Lib\site-packages\aio_pika\queue.py:31> exception=KeyError('email')>
+Traceback (most recent call last):
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python313\Lib\site-packages\aio_pika\queue.py", line 37, in consumer
+    return await create_task(callback, message)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Documents\Production Projects\HNG-BE-4\email-service\app\consumer.py", line 98, in on_message
+    await send_email(data["email"], subject, email_body)
+                     ~~~~^^^^^^^^^
+KeyError: 'email'
+2025-11-12 14:11:13,153 - [INFO] - \U0001f4e9 Received queue message: {'notification_id': 'd0564be0-235d-47f3-b00a-0b4423383ae2', 'correlation_id': 'dbac9859-9150-49c8-80a0-0cd6458366ae', 'template_body': 'Hello {{name}}, welcome to our platform!', 'template_subject': 'Welcome Email', 'template_code': 'TEMPLATE_001', 'recipient': 'gudymediapro@gmail.com', 'user_contact': {'email': 'testing@gmail.com', 'push_token': None}, 'user_id': '938b9124-25e6-46a7-89d4-14fbfddf2e0c', 'request_id': 'req-550e8400-e29b-41d4-a716-446655440000', 'priority': 1, 'notification_type': 'email', 'variables': {'name': 'John Doe', 'link': 'https://example.com/welcome', 'meta': {'key': 'value'}}, 'metadata': {'campaign_id': 'summer_2025'}}
+2025-11-12 14:11:15,918 - [INFO] - HTTP Request: GET https://hng-be-stage-4-production.up.railway.app/api/v1/templates/TEMPLATE_001 "HTTP/1.1 200 OK"
+2025-11-12 14:11:15,921 - [INFO] - \u2705 Template fetched: TEMPLATE_001
+2025-11-12 14:11:15,922 - [ERROR] - Exception in callback _task_done() at C:\Users\HP\AppData\Local\Programs\Python\Python313\Lib\site-packages\aio_pika\tools.py:40
+handle: <Handle _task_done() at C:\Users\HP\AppData\Local\Programs\Python\Python313\Lib\site-packages\aio_pika\tools.py:40>
+Traceback (most recent call last):
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python313\Lib\asyncio\events.py", line 89, in _run
+    self._context.run(self._callback, *self._args)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python313\Lib\site-packages\aio_pika\tools.py", line 44, in _task_done
+    raise exc
+  File "C:\Users\HP\Documents\Production Projects\HNG-BE-4\email-service\app\consumer.py", line 98, in on_message
+    await send_email(data["email"], subject, email_body)
+                     ~~~~^^^^^^^^^
+KeyError: 'email'
+2025-11-12 14:11:15,924 - [ERROR] - Task exception was never retrieved
+future: <Task finished name='Task-17' coro=<consumer() done, defined at C:\Users\HP\AppData\Local\Programs\Python\Python313\Lib\site-packages\aio_pika\queue.py:31> exception=KeyError('email')>
+Traceback (most recent call last):
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python313\Lib\site-packages\aio_pika\queue.py", line 37, in consumer
+    return await create_task(callback, message)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Documents\Production Projects\HNG-BE-4\email-service\app\consumer.py", line 98, in on_message
+    await send_email(data["email"], subject, email_body)
+                     ~~~~^^^^^^^^^
+KeyError: 'email'
+2025-11-12 14:25:52,972 - [INFO] - Connection to amqps://kwlnuylq:******@crow.rmq.cloudamqp.com/kwlnuylq closed. Reconnecting after 5 seconds.
+2025-11-12 14:25:56,425 - [INFO] - \u2705 Consumer started
+2025-11-12 14:25:59,606 - [INFO] - \U0001f4e8 Consumer listening on queue: email.queue
+2025-11-12 14:42:28,584 - [INFO] - Connection to amqps://kwlnuylq:******@crow.rmq.cloudamqp.com/kwlnuylq closed. Reconnecting after 5 seconds.
+2025-11-12 14:42:32,292 - [INFO] - \u2705 Consumer started
+2025-11-12 14:42:35,214 - [INFO] - \U0001f4e8 Consumer listening on queue: email.queue
+2025-11-12 14:42:35,696 - [ERROR] - Task was destroyed but it is pending!
+task: <Task pending name='Task-3' coro=<start_consumer_in_background() done, defined at C:\Users\HP\Documents\Production Projects\HNG-BE-4\email-service\app\consumer.py:107> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2025-11-12 14:42:58,285 - [INFO] - Pika version 1.3.2 connecting to ('34.250.32.211', 5671)
+2025-11-12 14:42:58,661 - [INFO] - Socket connected: <socket.socket fd=612, family=2, type=1, proto=6, laddr=('172.20.10.2', 51036), raddr=('34.250.32.211', 5671)>
+2025-11-12 14:42:59,266 - [INFO] - SSL handshake completed successfully: <ssl.SSLSocket fd=612, family=2, type=1, proto=0, laddr=('172.20.10.2', 51036), raddr=('34.250.32.211', 5671)>
+2025-11-12 14:42:59,277 - [INFO] - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x0000029F0A879A90>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x0000029F0A879A90> params=<URLParameters host=crow.rmq.cloudamqp.com port=5671 virtual_host=kwlnuylq ssl=True>>).
+2025-11-12 14:43:00,187 - [INFO] - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x0000029F0A879A90> params=<URLParameters host=crow.rmq.cloudamqp.com port=5671 virtual_host=kwlnuylq ssl=True>>
+2025-11-12 14:43:00,189 - [INFO] - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x0000029F0A879A90> params=<URLParameters host=crow.rmq.cloudamqp.com port=5671 virtual_host=kwlnuylq ssl=True>>
+2025-11-12 14:43:00,190 - [INFO] - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x0000029F0A879A90> params=<URLParameters host=crow.rmq.cloudamqp.com port=5671 virtual_host=kwlnuylq ssl=True>>
+2025-11-12 14:43:00,192 - [INFO] - Created channel=1
+2025-11-12 14:43:00,751 - [INFO] - Closing connection (200): Normal shutdown
+2025-11-12 14:43:00,752 - [INFO] - Closing channel (200): 'Normal shutdown' on <Channel number=1 OPEN conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x0000029F0A879A90> params=<URLParameters host=crow.rmq.cloudamqp.com port=5671 virtual_host=kwlnuylq ssl=True>>>
+2025-11-12 14:43:00,988 - [INFO] - \U0001f4e9 Received queue message: {'request_id': 'create-pass-001', 'notification_type': 'email', 'user_id': 'test-user', 'email': 'promisewonder03@gmail.com', 'template_code': 'CREATE_PASSWORD_001', 'variables': {'name': 'KC', 'create_password_link': 'https://yourapp.com/create-password?token=abcdef123456'}, 'priority': 1, 'metadata': {}}
+2025-11-12 14:43:01,038 - [INFO] - Received <Channel.CloseOk> on <Channel number=1 CLOSING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x0000029F0A879A90> params=<URLParameters host=crow.rmq.cloudamqp.com port=5671 virtual_host=kwlnuylq ssl=True>>>
+2025-11-12 14:43:01,040 - [INFO] - Closing connection (200): 'Normal shutdown'
+2025-11-12 14:43:01,313 - [INFO] - Aborting transport connection: state=1; <ssl.SSLSocket fd=612, family=2, type=1, proto=0, laddr=('172.20.10.2', 51036), raddr=('34.250.32.211', 5671)>
+2025-11-12 14:43:01,314 - [INFO] - _AsyncTransportBase._initate_abort(): Initiating abrupt asynchronous transport shutdown: state=1; error=None; <ssl.SSLSocket fd=612, family=2, type=1, proto=0, laddr=('172.20.10.2', 51036), raddr=('34.250.32.211', 5671)>
+2025-11-12 14:43:01,314 - [INFO] - Deactivating transport: state=1; <ssl.SSLSocket fd=612, family=2, type=1, proto=0, laddr=('172.20.10.2', 51036), raddr=('34.250.32.211', 5671)>
+2025-11-12 14:43:01,315 - [INFO] - AMQP stack terminated, failed to connect, or aborted: opened=True, error-arg=None; pending-error=ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-11-12 14:43:01,315 - [INFO] - Stack terminated due to ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-11-12 14:43:01,316 - [INFO] - Closing transport socket and unlinking: state=3; <ssl.SSLSocket fd=612, family=2, type=1, proto=0, laddr=('172.20.10.2', 51036), raddr=('34.250.32.211', 5671)>
+2025-11-12 14:43:01,317 - [INFO] - User-initiated close: result=BlockingConnection__OnClosedArgs(connection=<SelectConnection CLOSED transport=None params=<URLParameters host=crow.rmq.cloudamqp.com port=5671 virtual_host=kwlnuylq ssl=True>>, error=ConnectionClosedByClient: (200) 'Normal shutdown')
+2025-11-12 14:43:01,319 - [INFO] - \U0001f4e4 Enqueued notification: {"request_id":"create-pass-001","notification_type":"email","user_id":"test-user","email":"promisewonder03@gmail.com","template_code":"CREATE_PASSWORD_001","variables":{"name":"KC","create_password_link":"https://yourapp.com/create-password?token=abcdef123456"},"priority":1,"metadata":{}}
+2025-11-12 14:43:03,631 - [INFO] - HTTP Request: GET https://hng-be-stage-4-production.up.railway.app/api/v1/templates/CREATE_PASSWORD_001 "HTTP/1.1 200 OK"
+2025-11-12 14:43:03,644 - [INFO] - \u2705 Template fetched: CREATE_PASSWORD_001
+2025-11-12 14:43:08,599 - [INFO] - \u2705 Email sent to promisewonder03@gmail.com
+2025-11-12 14:45:50,910 - [INFO] - Connection to amqps://kwlnuylq:******@crow.rmq.cloudamqp.com/kwlnuylq closed. Reconnecting after 5 seconds.
