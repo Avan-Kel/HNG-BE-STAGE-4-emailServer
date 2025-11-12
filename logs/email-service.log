@@ -1,0 +1,34 @@
+2025-11-12 09:46:13,518 - [INFO] - \U0001f4e8 Consumer listening on queue: email.notifications.queue
+2025-11-12 09:46:24,063 - [INFO] - Connection to amqps://kwlnuylq:******@crow.rmq.cloudamqp.com/kwlnuylq closed. Reconnecting after 5 seconds.
+2025-11-12 09:46:27,188 - [INFO] - \u2705 Consumer started
+2025-11-12 09:46:29,680 - [INFO] - \U0001f4e8 Consumer listening on queue: email.notifications.queue
+2025-11-12 09:47:53,495 - [INFO] - Connection to amqps://kwlnuylq:******@crow.rmq.cloudamqp.com/kwlnuylq closed. Reconnecting after 5 seconds.
+2025-11-12 09:47:55,821 - [INFO] - \u2705 Consumer started
+2025-11-12 09:47:58,066 - [INFO] - \U0001f4e8 Consumer listening on queue: email.notifications.queue
+2025-11-12 09:54:18,438 - [ERROR] - Task was destroyed but it is pending!
+task: <Task pending name='Task-3' coro=<start_consumer_in_background() done, defined at C:\Users\HP\Documents\Production Projects\HNG-BE-4\email-service\app\consumer.py:101> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2025-11-12 09:56:06,365 - [INFO] - Pika version 1.3.2 connecting to ('34.250.32.211', 5671)
+2025-11-12 09:56:06,529 - [INFO] - Socket connected: <socket.socket fd=760, family=2, type=1, proto=6, laddr=('172.20.10.2', 50805), raddr=('34.250.32.211', 5671)>
+2025-11-12 09:56:06,773 - [INFO] - SSL handshake completed successfully: <ssl.SSLSocket fd=760, family=2, type=1, proto=0, laddr=('172.20.10.2', 50805), raddr=('34.250.32.211', 5671)>
+2025-11-12 09:56:06,781 - [INFO] - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x0000026C71C2FE00>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x0000026C71C2FE00> params=<URLParameters host=crow.rmq.cloudamqp.com port=5671 virtual_host=kwlnuylq ssl=True>>).
+2025-11-12 09:56:07,331 - [INFO] - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x0000026C71C2FE00> params=<URLParameters host=crow.rmq.cloudamqp.com port=5671 virtual_host=kwlnuylq ssl=True>>
+2025-11-12 09:56:07,331 - [INFO] - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x0000026C71C2FE00> params=<URLParameters host=crow.rmq.cloudamqp.com port=5671 virtual_host=kwlnuylq ssl=True>>
+2025-11-12 09:56:07,332 - [INFO] - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x0000026C71C2FE00> params=<URLParameters host=crow.rmq.cloudamqp.com port=5671 virtual_host=kwlnuylq ssl=True>>
+2025-11-12 09:56:07,332 - [INFO] - Created channel=1
+2025-11-12 09:56:07,652 - [INFO] - Closing connection (200): Normal shutdown
+2025-11-12 09:56:07,652 - [INFO] - Closing channel (200): 'Normal shutdown' on <Channel number=1 OPEN conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x0000026C71C2FE00> params=<URLParameters host=crow.rmq.cloudamqp.com port=5671 virtual_host=kwlnuylq ssl=True>>>
+2025-11-12 09:56:07,815 - [INFO] - Received <Channel.CloseOk> on <Channel number=1 CLOSING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x0000026C71C2FE00> params=<URLParameters host=crow.rmq.cloudamqp.com port=5671 virtual_host=kwlnuylq ssl=True>>>
+2025-11-12 09:56:07,816 - [INFO] - Closing connection (200): 'Normal shutdown'
+2025-11-12 09:56:07,817 - [INFO] - \U0001f4e9 Received queue message: {'request_id': 'confirm-email-001', 'notification_type': 'email', 'user_id': 'test-user-123', 'email': 'promisewonder03@gmail.com', 'template_code': 'CONFIRM_EMAIL_001', 'variables': {'name': 'KC', 'confirmation_link': 'https://example.com/confirm/abc123'}, 'priority': 1, 'metadata': {}}
+2025-11-12 09:56:07,955 - [INFO] - Aborting transport connection: state=1; <ssl.SSLSocket fd=760, family=2, type=1, proto=0, laddr=('172.20.10.2', 50805), raddr=('34.250.32.211', 5671)>
+2025-11-12 09:56:07,956 - [INFO] - _AsyncTransportBase._initate_abort(): Initiating abrupt asynchronous transport shutdown: state=1; error=None; <ssl.SSLSocket fd=760, family=2, type=1, proto=0, laddr=('172.20.10.2', 50805), raddr=('34.250.32.211', 5671)>
+2025-11-12 09:56:07,956 - [INFO] - Deactivating transport: state=1; <ssl.SSLSocket fd=760, family=2, type=1, proto=0, laddr=('172.20.10.2', 50805), raddr=('34.250.32.211', 5671)>
+2025-11-12 09:56:07,956 - [INFO] - AMQP stack terminated, failed to connect, or aborted: opened=True, error-arg=None; pending-error=ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-11-12 09:56:07,956 - [INFO] - Stack terminated due to ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-11-12 09:56:07,957 - [INFO] - Closing transport socket and unlinking: state=3; <ssl.SSLSocket fd=760, family=2, type=1, proto=0, laddr=('172.20.10.2', 50805), raddr=('34.250.32.211', 5671)>
+2025-11-12 09:56:07,961 - [INFO] - User-initiated close: result=BlockingConnection__OnClosedArgs(connection=<SelectConnection CLOSED transport=None params=<URLParameters host=crow.rmq.cloudamqp.com port=5671 virtual_host=kwlnuylq ssl=True>>, error=ConnectionClosedByClient: (200) 'Normal shutdown')
+2025-11-12 09:56:07,964 - [INFO] - \U0001f4e4 Enqueued notification: {"request_id":"confirm-email-001","notification_type":"email","user_id":"test-user-123","email":"promisewonder03@gmail.com","template_code":"CONFIRM_EMAIL_001","variables":{"name":"KC","confirmation_link":"https://example.com/confirm/abc123"},"priority":1,"metadata":{}}
+2025-11-12 09:56:09,555 - [INFO] - HTTP Request: GET https://hng-be-stage-4-production.up.railway.app/api/v1/templates/CONFIRM_EMAIL_001 "HTTP/1.1 200 OK"
+2025-11-12 09:56:09,555 - [INFO] - \u2705 Template fetched: CONFIRM_EMAIL_001
+2025-11-12 09:56:12,690 - [INFO] - \u2705 Email sent to promisewonder03@gmail.com
+2025-11-12 10:10:23,735 - [INFO] - Connection to amqps://kwlnuylq:******@crow.rmq.cloudamqp.com/kwlnuylq closed. Reconnecting after 5 seconds.
