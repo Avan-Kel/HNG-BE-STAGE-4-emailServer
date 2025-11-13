@@ -26,10 +26,21 @@ RABBITMQ_URL = os.getenv("RABBITMQ_URL")
 QUEUE_NAME = os.getenv("RABBITMQ_QUEUE", "email.queue")
 
 
+# ✅ FIXED: Keep consumer task alive during app lifecycle
 @app.on_event("startup")
 async def on_startup():
-    asyncio.create_task(start_consumer_in_background())
-    logging.info("✅ Consumer started")
+    # store task in app.state to prevent garbage collection
+    app.state.consumer_task = asyncio.create_task(start_consumer_in_background())
+    logging.info("✅ Consumer started and running in background")
+
+
+@app.on_event("shutdown")
+async def on_shutdown():
+    # cancel the background consumer cleanly
+    task = getattr(app.state, "consumer_task", None)
+    if task:
+        task.cancel()
+        logging.info("🛑 Consumer stopped during shutdown")
 
 
 @app.get("/")

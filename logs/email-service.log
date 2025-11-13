@@ -131,3 +131,158 @@ task: <Task pending name='Task-3' coro=<start_consumer_in_background() done, def
 2025-11-12 14:43:03,644 - [INFO] - \u2705 Template fetched: CREATE_PASSWORD_001
 2025-11-12 14:43:08,599 - [INFO] - \u2705 Email sent to promisewonder03@gmail.com
 2025-11-12 14:45:50,910 - [INFO] - Connection to amqps://kwlnuylq:******@crow.rmq.cloudamqp.com/kwlnuylq closed. Reconnecting after 5 seconds.
+2025-11-13 07:02:14,334 - [INFO] - \u2705 Consumer started
+2025-11-13 07:02:17,622 - [INFO] - \U0001f4e8 Consumer listening on queue: email.queue
+2025-11-13 07:02:47,604 - [ERROR] - Task was destroyed but it is pending!
+task: <Task pending name='Task-3' coro=<start_consumer_in_background() running at C:\Users\HP\Documents\Production Projects\HNG-BE-4\email-service\app\consumer.py:134> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2025-11-13 07:02:47,872 - [INFO] - Pika version 1.3.2 connecting to ('34.250.32.211', 5671)
+2025-11-13 07:02:49,364 - [INFO] - Socket connected: <socket.socket fd=872, family=2, type=1, proto=6, laddr=('172.20.10.2', 50419), raddr=('34.250.32.211', 5671)>
+2025-11-13 07:02:49,781 - [INFO] - SSL handshake completed successfully: <ssl.SSLSocket fd=872, family=2, type=1, proto=0, laddr=('172.20.10.2', 50419), raddr=('34.250.32.211', 5671)>
+2025-11-13 07:02:49,783 - [INFO] - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x000002C27A6A9A90>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x000002C27A6A9A90> params=<URLParameters host=crow.rmq.cloudamqp.com port=5671 virtual_host=kwlnuylq ssl=True>>).
+2025-11-13 07:02:50,800 - [INFO] - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x000002C27A6A9A90> params=<URLParameters host=crow.rmq.cloudamqp.com port=5671 virtual_host=kwlnuylq ssl=True>>
+2025-11-13 07:02:50,802 - [INFO] - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x000002C27A6A9A90> params=<URLParameters host=crow.rmq.cloudamqp.com port=5671 virtual_host=kwlnuylq ssl=True>>
+2025-11-13 07:02:50,804 - [INFO] - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x000002C27A6A9A90> params=<URLParameters host=crow.rmq.cloudamqp.com port=5671 virtual_host=kwlnuylq ssl=True>>
+2025-11-13 07:02:50,805 - [INFO] - Created channel=1
+2025-11-13 07:02:51,521 - [INFO] - Closing connection (200): Normal shutdown
+2025-11-13 07:02:51,522 - [INFO] - Closing channel (200): 'Normal shutdown' on <Channel number=1 OPEN conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x000002C27A6A9A90> params=<URLParameters host=crow.rmq.cloudamqp.com port=5671 virtual_host=kwlnuylq ssl=True>>>
+2025-11-13 07:02:51,823 - [INFO] - Received <Channel.CloseOk> on <Channel number=1 CLOSING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x000002C27A6A9A90> params=<URLParameters host=crow.rmq.cloudamqp.com port=5671 virtual_host=kwlnuylq ssl=True>>>
+2025-11-13 07:02:51,824 - [INFO] - Closing connection (200): 'Normal shutdown'
+2025-11-13 07:02:52,232 - [INFO] - Aborting transport connection: state=1; <ssl.SSLSocket fd=872, family=2, type=1, proto=0, laddr=('172.20.10.2', 50419), raddr=('34.250.32.211', 5671)>
+2025-11-13 07:02:52,233 - [INFO] - _AsyncTransportBase._initate_abort(): Initiating abrupt asynchronous transport shutdown: state=1; error=None; <ssl.SSLSocket fd=872, family=2, type=1, proto=0, laddr=('172.20.10.2', 50419), raddr=('34.250.32.211', 5671)>
+2025-11-13 07:02:52,235 - [INFO] - Deactivating transport: state=1; <ssl.SSLSocket fd=872, family=2, type=1, proto=0, laddr=('172.20.10.2', 50419), raddr=('34.250.32.211', 5671)>
+2025-11-13 07:02:52,236 - [INFO] - AMQP stack terminated, failed to connect, or aborted: opened=True, error-arg=None; pending-error=ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-11-13 07:02:52,237 - [INFO] - Stack terminated due to ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-11-13 07:02:52,238 - [INFO] - Closing transport socket and unlinking: state=3; <ssl.SSLSocket fd=872, family=2, type=1, proto=0, laddr=('172.20.10.2', 50419), raddr=('34.250.32.211', 5671)>
+2025-11-13 07:02:52,240 - [INFO] - User-initiated close: result=BlockingConnection__OnClosedArgs(connection=<SelectConnection CLOSED transport=None params=<URLParameters host=crow.rmq.cloudamqp.com port=5671 virtual_host=kwlnuylq ssl=True>>, error=ConnectionClosedByClient: (200) 'Normal shutdown')
+2025-11-13 07:02:52,244 - [INFO] - \U0001f4e4 Enqueued notification: {"request_id":"req_001","notification_type":"email","user_id":"user_001","email":"promisewonder03@gmail.com","template_code":"JOB_APP_001","variables":{"name":"Promise Wonder","position":"Frontend Developer"},"priority":1,"metadata":{}}
+2025-11-13 07:12:05,820 - [INFO] - Connection to amqps://kwlnuylq:******@crow.rmq.cloudamqp.com/kwlnuylq closed. Reconnecting after 5 seconds.
+2025-11-13 07:12:09,577 - [INFO] - \u2705 Consumer started
+2025-11-13 07:12:12,449 - [INFO] - \U0001f4e8 Consumer listening on queue: email.queue
+2025-11-13 07:12:15,667 - [INFO] - Pika version 1.3.2 connecting to ('34.250.32.211', 5671)
+2025-11-13 07:12:15,929 - [INFO] - Socket connected: <socket.socket fd=912, family=2, type=1, proto=6, laddr=('172.20.10.2', 50557), raddr=('34.250.32.211', 5671)>
+2025-11-13 07:12:16,254 - [INFO] - SSL handshake completed successfully: <ssl.SSLSocket fd=912, family=2, type=1, proto=0, laddr=('172.20.10.2', 50557), raddr=('34.250.32.211', 5671)>
+2025-11-13 07:12:16,259 - [INFO] - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x0000020D9270A3C0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x0000020D9270A3C0> params=<URLParameters host=crow.rmq.cloudamqp.com port=5671 virtual_host=kwlnuylq ssl=True>>).
+2025-11-13 07:12:17,261 - [INFO] - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x0000020D9270A3C0> params=<URLParameters host=crow.rmq.cloudamqp.com port=5671 virtual_host=kwlnuylq ssl=True>>
+2025-11-13 07:12:17,272 - [INFO] - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x0000020D9270A3C0> params=<URLParameters host=crow.rmq.cloudamqp.com port=5671 virtual_host=kwlnuylq ssl=True>>
+2025-11-13 07:12:17,274 - [INFO] - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x0000020D9270A3C0> params=<URLParameters host=crow.rmq.cloudamqp.com port=5671 virtual_host=kwlnuylq ssl=True>>
+2025-11-13 07:12:17,277 - [INFO] - Created channel=1
+2025-11-13 07:12:17,878 - [INFO] - Closing connection (200): Normal shutdown
+2025-11-13 07:12:17,879 - [INFO] - Closing channel (200): 'Normal shutdown' on <Channel number=1 OPEN conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x0000020D9270A3C0> params=<URLParameters host=crow.rmq.cloudamqp.com port=5671 virtual_host=kwlnuylq ssl=True>>>
+2025-11-13 07:12:18,159 - [INFO] - Received <Channel.CloseOk> on <Channel number=1 CLOSING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x0000020D9270A3C0> params=<URLParameters host=crow.rmq.cloudamqp.com port=5671 virtual_host=kwlnuylq ssl=True>>>
+2025-11-13 07:12:18,161 - [INFO] - Closing connection (200): 'Normal shutdown'
+2025-11-13 07:12:18,404 - [INFO] - Aborting transport connection: state=1; <ssl.SSLSocket fd=912, family=2, type=1, proto=0, laddr=('172.20.10.2', 50557), raddr=('34.250.32.211', 5671)>
+2025-11-13 07:12:18,405 - [INFO] - _AsyncTransportBase._initate_abort(): Initiating abrupt asynchronous transport shutdown: state=1; error=None; <ssl.SSLSocket fd=912, family=2, type=1, proto=0, laddr=('172.20.10.2', 50557), raddr=('34.250.32.211', 5671)>
+2025-11-13 07:12:18,406 - [INFO] - Deactivating transport: state=1; <ssl.SSLSocket fd=912, family=2, type=1, proto=0, laddr=('172.20.10.2', 50557), raddr=('34.250.32.211', 5671)>
+2025-11-13 07:12:18,407 - [INFO] - AMQP stack terminated, failed to connect, or aborted: opened=True, error-arg=None; pending-error=ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-11-13 07:12:18,407 - [INFO] - Stack terminated due to ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-11-13 07:12:18,408 - [INFO] - Closing transport socket and unlinking: state=3; <ssl.SSLSocket fd=912, family=2, type=1, proto=0, laddr=('172.20.10.2', 50557), raddr=('34.250.32.211', 5671)>
+2025-11-13 07:12:18,409 - [INFO] - User-initiated close: result=BlockingConnection__OnClosedArgs(connection=<SelectConnection CLOSED transport=None params=<URLParameters host=crow.rmq.cloudamqp.com port=5671 virtual_host=kwlnuylq ssl=True>>, error=ConnectionClosedByClient: (200) 'Normal shutdown')
+2025-11-13 07:12:18,411 - [INFO] - \U0001f4e4 Enqueued notification: {"request_id":"req_001","notification_type":"email","user_id":"user_001","email":"promisewonder03@gmail.com","template_code":"JOB_APP_001","variables":{"name":"Promise Wonder","position":"Frontend Developer"},"priority":1,"metadata":{}}
+2025-11-13 07:13:15,328 - [INFO] - Connection to amqps://kwlnuylq:******@crow.rmq.cloudamqp.com/kwlnuylq closed. Reconnecting after 5 seconds.
+2025-11-13 07:13:18,734 - [INFO] - \u2705 Consumer started and running in background
+2025-11-13 07:13:21,567 - [INFO] - \U0001f4e8 Consumer listening on queue: email.queue
+2025-11-13 07:13:25,630 - [INFO] - Pika version 1.3.2 connecting to ('34.250.32.211', 5671)
+2025-11-13 07:13:25,867 - [INFO] - Socket connected: <socket.socket fd=824, family=2, type=1, proto=6, laddr=('172.20.10.2', 50568), raddr=('34.250.32.211', 5671)>
+2025-11-13 07:13:26,061 - [INFO] - SSL handshake completed successfully: <ssl.SSLSocket fd=824, family=2, type=1, proto=0, laddr=('172.20.10.2', 50568), raddr=('34.250.32.211', 5671)>
+2025-11-13 07:13:26,065 - [INFO] - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x000001ECD163A3C0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x000001ECD163A3C0> params=<URLParameters host=crow.rmq.cloudamqp.com port=5671 virtual_host=kwlnuylq ssl=True>>).
+2025-11-13 07:13:26,689 - [INFO] - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x000001ECD163A3C0> params=<URLParameters host=crow.rmq.cloudamqp.com port=5671 virtual_host=kwlnuylq ssl=True>>
+2025-11-13 07:13:26,694 - [INFO] - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x000001ECD163A3C0> params=<URLParameters host=crow.rmq.cloudamqp.com port=5671 virtual_host=kwlnuylq ssl=True>>
+2025-11-13 07:13:26,695 - [INFO] - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x000001ECD163A3C0> params=<URLParameters host=crow.rmq.cloudamqp.com port=5671 virtual_host=kwlnuylq ssl=True>>
+2025-11-13 07:13:26,696 - [INFO] - Created channel=1
+2025-11-13 07:13:27,204 - [INFO] - Closing connection (200): Normal shutdown
+2025-11-13 07:13:27,205 - [INFO] - Closing channel (200): 'Normal shutdown' on <Channel number=1 OPEN conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x000001ECD163A3C0> params=<URLParameters host=crow.rmq.cloudamqp.com port=5671 virtual_host=kwlnuylq ssl=True>>>
+2025-11-13 07:13:27,404 - [INFO] - Received <Channel.CloseOk> on <Channel number=1 CLOSING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x000001ECD163A3C0> params=<URLParameters host=crow.rmq.cloudamqp.com port=5671 virtual_host=kwlnuylq ssl=True>>>
+2025-11-13 07:13:27,406 - [INFO] - Closing connection (200): 'Normal shutdown'
+2025-11-13 07:13:27,710 - [INFO] - Aborting transport connection: state=1; <ssl.SSLSocket fd=824, family=2, type=1, proto=0, laddr=('172.20.10.2', 50568), raddr=('34.250.32.211', 5671)>
+2025-11-13 07:13:27,711 - [INFO] - _AsyncTransportBase._initate_abort(): Initiating abrupt asynchronous transport shutdown: state=1; error=None; <ssl.SSLSocket fd=824, family=2, type=1, proto=0, laddr=('172.20.10.2', 50568), raddr=('34.250.32.211', 5671)>
+2025-11-13 07:13:27,712 - [INFO] - Deactivating transport: state=1; <ssl.SSLSocket fd=824, family=2, type=1, proto=0, laddr=('172.20.10.2', 50568), raddr=('34.250.32.211', 5671)>
+2025-11-13 07:13:27,713 - [INFO] - AMQP stack terminated, failed to connect, or aborted: opened=True, error-arg=None; pending-error=ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-11-13 07:13:27,713 - [INFO] - Stack terminated due to ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-11-13 07:13:27,714 - [INFO] - Closing transport socket and unlinking: state=3; <ssl.SSLSocket fd=824, family=2, type=1, proto=0, laddr=('172.20.10.2', 50568), raddr=('34.250.32.211', 5671)>
+2025-11-13 07:13:27,717 - [INFO] - User-initiated close: result=BlockingConnection__OnClosedArgs(connection=<SelectConnection CLOSED transport=None params=<URLParameters host=crow.rmq.cloudamqp.com port=5671 virtual_host=kwlnuylq ssl=True>>, error=ConnectionClosedByClient: (200) 'Normal shutdown')
+2025-11-13 07:13:27,720 - [INFO] - \U0001f4e4 Enqueued notification: {"request_id":"req_001","notification_type":"email","user_id":"user_001","email":"promisewonder03@gmail.com","template_code":"JOB_APP_001","variables":{"name":"Promise Wonder","position":"Frontend Developer"},"priority":1,"metadata":{}}
+2025-11-13 07:14:09,805 - [INFO] - \U0001f4e9 Received queue message: {'request_id': 'req_001', 'notification_type': 'email', 'user_id': 'user_001', 'email': 'promisewonder03@gmail.com', 'template_code': 'JOB_APP_001', 'variables': {'name': 'Promise Wonder', 'position': 'Frontend Developer'}, 'priority': 1, 'metadata': {}}
+2025-11-13 07:14:12,462 - [INFO] - HTTP Request: GET https://hng-be-stage-4-production.up.railway.app/api/v1/templates/JOB_APP_001 "HTTP/1.1 200 OK"
+2025-11-13 07:14:12,465 - [INFO] - \u2705 Template fetched: JOB_APP_001
+2025-11-13 07:14:12,467 - [INFO] - \u2705 Template fetched: JOB_APP_001
+2025-11-13 07:14:12,467 - [INFO] - \U0001f9e9 Template rendered successfully.
+2025-11-13 07:14:12,473 - [ERROR] - Exception in callback _task_done() at C:\Users\HP\AppData\Local\Programs\Python\Python313\Lib\site-packages\aio_pika\tools.py:40
+handle: <Handle _task_done() at C:\Users\HP\AppData\Local\Programs\Python\Python313\Lib\site-packages\aio_pika\tools.py:40>
+Traceback (most recent call last):
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python313\Lib\asyncio\events.py", line 89, in _run
+    self._context.run(self._callback, *self._args)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python313\Lib\site-packages\aio_pika\tools.py", line 44, in _task_done
+    raise exc
+  File "C:\Users\HP\Documents\Production Projects\HNG-BE-4\email-service\app\consumer.py", line 112, in on_message
+    subject = data.get("subject") or template_body.get("subject", "Notification")
+                                     ^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'get'
+2025-11-13 07:14:12,645 - [ERROR] - Task exception was never retrieved
+future: <Task finished name='Task-17' coro=<consumer() done, defined at C:\Users\HP\AppData\Local\Programs\Python\Python313\Lib\site-packages\aio_pika\queue.py:31> exception=AttributeError("'str' object has no attribute 'get'")>
+Traceback (most recent call last):
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python313\Lib\site-packages\aio_pika\queue.py", line 37, in consumer
+    return await create_task(callback, message)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Documents\Production Projects\HNG-BE-4\email-service\app\consumer.py", line 112, in on_message
+    subject = data.get("subject") or template_body.get("subject", "Notification")
+                                     ^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'get'
+2025-11-13 07:14:21,818 - [INFO] - Pika version 1.3.2 connecting to ('34.250.32.211', 5671)
+2025-11-13 07:14:22,085 - [INFO] - Socket connected: <socket.socket fd=800, family=2, type=1, proto=6, laddr=('172.20.10.2', 50587), raddr=('34.250.32.211', 5671)>
+2025-11-13 07:14:22,328 - [INFO] - SSL handshake completed successfully: <ssl.SSLSocket fd=800, family=2, type=1, proto=0, laddr=('172.20.10.2', 50587), raddr=('34.250.32.211', 5671)>
+2025-11-13 07:14:22,334 - [INFO] - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x000001ECD1CC51D0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x000001ECD1CC51D0> params=<URLParameters host=crow.rmq.cloudamqp.com port=5671 virtual_host=kwlnuylq ssl=True>>).
+2025-11-13 07:14:23,108 - [INFO] - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x000001ECD1CC51D0> params=<URLParameters host=crow.rmq.cloudamqp.com port=5671 virtual_host=kwlnuylq ssl=True>>
+2025-11-13 07:14:23,109 - [INFO] - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x000001ECD1CC51D0> params=<URLParameters host=crow.rmq.cloudamqp.com port=5671 virtual_host=kwlnuylq ssl=True>>
+2025-11-13 07:14:23,110 - [INFO] - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x000001ECD1CC51D0> params=<URLParameters host=crow.rmq.cloudamqp.com port=5671 virtual_host=kwlnuylq ssl=True>>
+2025-11-13 07:14:23,111 - [INFO] - Created channel=1
+2025-11-13 07:14:23,621 - [INFO] - Closing connection (200): Normal shutdown
+2025-11-13 07:14:23,622 - [INFO] - Closing channel (200): 'Normal shutdown' on <Channel number=1 OPEN conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x000001ECD1CC51D0> params=<URLParameters host=crow.rmq.cloudamqp.com port=5671 virtual_host=kwlnuylq ssl=True>>>
+2025-11-13 07:14:23,815 - [INFO] - Received <Channel.CloseOk> on <Channel number=1 CLOSING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x000001ECD1CC51D0> params=<URLParameters host=crow.rmq.cloudamqp.com port=5671 virtual_host=kwlnuylq ssl=True>>>
+2025-11-13 07:14:23,817 - [INFO] - Closing connection (200): 'Normal shutdown'
+2025-11-13 07:14:23,821 - [INFO] - \U0001f4e9 Received queue message: {'request_id': 'req_001', 'notification_type': 'email', 'user_id': 'user_001', 'email': 'promisewonder03@gmail.com', 'template_code': 'JOB_APP_001', 'variables': {'name': 'Promise Wonder', 'position': 'Frontend Developer'}, 'priority': 1, 'metadata': {}}
+2025-11-13 07:14:24,029 - [INFO] - Aborting transport connection: state=1; <ssl.SSLSocket fd=800, family=2, type=1, proto=0, laddr=('172.20.10.2', 50587), raddr=('34.250.32.211', 5671)>
+2025-11-13 07:14:24,031 - [INFO] - _AsyncTransportBase._initate_abort(): Initiating abrupt asynchronous transport shutdown: state=1; error=None; <ssl.SSLSocket fd=800, family=2, type=1, proto=0, laddr=('172.20.10.2', 50587), raddr=('34.250.32.211', 5671)>
+2025-11-13 07:14:24,033 - [INFO] - Deactivating transport: state=1; <ssl.SSLSocket fd=800, family=2, type=1, proto=0, laddr=('172.20.10.2', 50587), raddr=('34.250.32.211', 5671)>
+2025-11-13 07:14:24,035 - [INFO] - AMQP stack terminated, failed to connect, or aborted: opened=True, error-arg=None; pending-error=ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-11-13 07:14:24,036 - [INFO] - Stack terminated due to ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-11-13 07:14:24,037 - [INFO] - Closing transport socket and unlinking: state=3; <ssl.SSLSocket fd=800, family=2, type=1, proto=0, laddr=('172.20.10.2', 50587), raddr=('34.250.32.211', 5671)>
+2025-11-13 07:14:24,039 - [INFO] - User-initiated close: result=BlockingConnection__OnClosedArgs(connection=<SelectConnection CLOSED transport=None params=<URLParameters host=crow.rmq.cloudamqp.com port=5671 virtual_host=kwlnuylq ssl=True>>, error=ConnectionClosedByClient: (200) 'Normal shutdown')
+2025-11-13 07:14:24,040 - [INFO] - \U0001f4e4 Enqueued notification: {"request_id":"req_001","notification_type":"email","user_id":"user_001","email":"promisewonder03@gmail.com","template_code":"JOB_APP_001","variables":{"name":"Promise Wonder","position":"Frontend Developer"},"priority":1,"metadata":{}}
+2025-11-13 07:14:26,591 - [INFO] - HTTP Request: GET https://hng-be-stage-4-production.up.railway.app/api/v1/templates/JOB_APP_001 "HTTP/1.1 200 OK"
+2025-11-13 07:14:26,599 - [INFO] - \u2705 Template fetched: JOB_APP_001
+2025-11-13 07:14:26,602 - [INFO] - \u2705 Template fetched: JOB_APP_001
+2025-11-13 07:14:26,604 - [INFO] - \U0001f9e9 Template rendered successfully.
+2025-11-13 07:14:26,607 - [ERROR] - Exception in callback _task_done() at C:\Users\HP\AppData\Local\Programs\Python\Python313\Lib\site-packages\aio_pika\tools.py:40
+handle: <Handle _task_done() at C:\Users\HP\AppData\Local\Programs\Python\Python313\Lib\site-packages\aio_pika\tools.py:40>
+Traceback (most recent call last):
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python313\Lib\asyncio\events.py", line 89, in _run
+    self._context.run(self._callback, *self._args)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python313\Lib\site-packages\aio_pika\tools.py", line 44, in _task_done
+    raise exc
+  File "C:\Users\HP\Documents\Production Projects\HNG-BE-4\email-service\app\consumer.py", line 112, in on_message
+    subject = data.get("subject") or template_body.get("subject", "Notification")
+                                     ^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'get'
+2025-11-13 07:14:26,624 - [ERROR] - Task exception was never retrieved
+future: <Task finished name='Task-21' coro=<consumer() done, defined at C:\Users\HP\AppData\Local\Programs\Python\Python313\Lib\site-packages\aio_pika\queue.py:31> exception=AttributeError("'str' object has no attribute 'get'")>
+Traceback (most recent call last):
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python313\Lib\site-packages\aio_pika\queue.py", line 37, in consumer
+    return await create_task(callback, message)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Documents\Production Projects\HNG-BE-4\email-service\app\consumer.py", line 112, in on_message
+    subject = data.get("subject") or template_body.get("subject", "Notification")
+                                     ^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'get'
+2025-11-13 07:18:52,249 - [INFO] - \U0001f6d1 Consumer stopped during shutdown
+2025-11-13 07:18:52,274 - [INFO] - Connection to amqps://kwlnuylq:******@crow.rmq.cloudamqp.com/kwlnuylq closed. Reconnecting after 5 seconds.
+2025-11-13 07:18:55,863 - [INFO] - \u2705 Consumer started and running in background
+2025-11-13 07:18:59,479 - [INFO] - \U0001f4e8 Consumer listening on queue: email.queue
+2025-11-13 07:19:49,041 - [INFO] - \U0001f4e9 Received queue message: {'request_id': 'req_001', 'notification_type': 'email', 'user_id': 'user_001', 'email': 'promisewonder03@gmail.com', 'template_code': 'JOB_APP_001', 'variables': {'name': 'Promise Wonder', 'position': 'Frontend Developer'}, 'priority': 1, 'metadata': {}}
+2025-11-13 07:19:51,191 - [INFO] - HTTP Request: GET https://hng-be-stage-4-production.up.railway.app/api/v1/templates/JOB_APP_001 "HTTP/1.1 200 OK"
+2025-11-13 07:19:51,195 - [INFO] - \u2705 Template fetched: JOB_APP_001
+2025-11-13 07:19:51,196 - [INFO] - \U0001f48c Template rendered successfully, sending email...
+2025-11-13 07:19:55,815 - [INFO] - \u2705 Email sent to promisewonder03@gmail.com
+2025-11-13 07:21:19,797 - [INFO] - \U0001f6d1 Consumer stopped during shutdown
+2025-11-13 07:21:19,831 - [INFO] - Connection to amqps://kwlnuylq:******@crow.rmq.cloudamqp.com/kwlnuylq closed. Reconnecting after 5 seconds.
